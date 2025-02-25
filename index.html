@@ -2,85 +2,80 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
-    <style>
-        .poppins-regular {
-            font-family: "Poppins", serif;
-            font-weight: 400;
-            font-style: normal;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet" />
+  <style>
+    .poppins-regular {
+      font-family: "Poppins", serif;
+      font-weight: 400;
+      font-style: normal;
+    }
 
-        .sun-bg {
-            animation: spiny 5s linear infinite;
-        }
+    .sun-bg {
+      animation: spiny 5s linear infinite;
+    }
 
-        @keyframes spiny {
-            from {
-                transform: rotate(0);
-            }
+    @keyframes spiny {
+      from {
+        transform: rotate(0);
+      }
 
-            to {
-                transform: rotate(360deg);
-            }
-        }
-
-
-
-
-    </style>
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
 </head>
 
 <body>
-    <main class="poppins-regular ">
-        <h1 class="font-bold text-6xl text-center mx-auto my-10">
-            <span class="text-green-600">Focus on</span> Today
-        </h1>
+  <main class="poppins-regular">
+    <h1 class="font-bold text-6xl text-center mx-auto my-10">
+      <span class="text-green-600">Focus on</span> Today
+    </h1>
 
-        <div class="main-card container md:w-5/12 rounded-xl p-8 border border-slate-500 mx-auto">
-            <div class="flex mx-auto items-center justify-center ">
-                <h2 class="font-bold text-3xl px-2">Today</h2>
-   
-                <div class="relative w-10 h-10">
-                    <img class="sun-bg absolute w-full" src="./assets/Vector.svg" alt="sun-bg">
-                    <img class=" absolute p-[6px] w-1/2 h-1/2 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
-                        src="./assets/Group 5.svg" alt="sun=-Face">
-                </div>
-            </div>
-            <h2 class="text-sky-400 text-lg  py-3">Raise the bar by completing your goals!</h2>
-            <div class="bg-green-100 h-6 rounded-full my-5">
-                <div class="bg-green-700 h-full rounded-full w-0"></div>
-            </div>
+    <div class="main-card container md:w-5/12 rounded-xl p-8 border border-slate-500 mx-auto">
+      <div class="flex mx-auto items-center justify-center">
+        <h2 class="font-bold text-3xl px-2">Today</h2>
 
-            <!-- <h2 class="text-red-500 text-lg py-3">Please set all the 3 goals!</h2> -->
+        <div class="relative w-10 h-10">
+          <img class="sun-bg absolute w-full" src="./assets/Vector.svg" alt="sun-bg" />
+          <img class="absolute p-[6px] w-1/2 h-1/2 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+            src="./assets/Group 5.svg" alt="sun=-Face" />
+        </div>
+      </div>
+      <h2 class="text-sky-400 text-lg py-3">
+        Raise the bar by completing your goals!
+      </h2>
+        <div id="progress" class="px-2 h-6  my-5 bg-green-700 invisible rounded-full  text-white"></div>
 
-            <div id="goals" class="goals">
-                <div id="card" class="card flex items-center rounded-2xl border border-slate-500 mb-10">
-                    <div class="w-6 h-6 ml-5 rounded-full border border-slate-500 flex-shrink-0 cursor-pointer flex justify-center items-center"></div>
-                    <input class="p-7 outline-none  w-full" type="text" placeholder="Add new goal... ">
-                    <span id="addbtn"   class="addbtn cursor-pointer text-xl p-7 text-center">+</span>
-                </div>
+      <h2 id="error" class="text-red-500 text-lg py-3 hidden">Please goals first !</h2>
 
+      <div id="goals" class="goals">
 
+        <div id="card" class="card flex items-center rounded-2xl border border-slate-500 mb-10">
+          <div class="circle w-6 h-6 ml-5 rounded-full border border-slate-500 flex-shrink-0 cursor-pointer flex justify-center items-center">
+          </div>
 
-            </div>
-            <h4 class="text-sm text-center  text-slate-600">Made with ❤️ by Plabon</h4>
-
+          <input class=" input p-7 outline-none w-full font-bold" type="text" placeholder="Add new goal... " />
+          <span class="addbtn cursor-pointer text-xl p-7 text-center">+</span>
         </div>
 
+      </div>
 
 
-
-    </main>
-    <script src="./script.js"></script>
-
+      <h4 class="text-sm text-center text-slate-600">
+        Made with ❤️ by Plabon
+      </h4>
+    </div>
+  </main>
+  <script src="./script.js"></script>
 </body>
 
-</html> 
+</html>
