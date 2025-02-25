@@ -41,6 +41,8 @@ document.addEventListener("click", function (event) {
       console.log(card)
 
       inputField.classList.add("text-green-500", "line-through", "decoration-3");
+      inputField.disabled=true
+
 
       updateGoalCounts()
 
