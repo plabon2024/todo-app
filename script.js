@@ -20,7 +20,7 @@ function addNewCard() {
     "card flex items-center rounded-2xl border border-slate-500 mb-10";
   newGoal.innerHTML = `
           <div class="circle w-6 h-6 ml-5 rounded-full border border-slate-500 flex-shrink-0 cursor-pointer flex justify-center items-center"></div>
-          <input class="p-7 outline-none w-full font-bold " type="text" placeholder="Add new goal...">
+          <input class="input p-7 outline-none w-full font-bold " type="text" placeholder="Add new goal...">
           <span class="addbtn cursor-pointer text-xl p-7 text-center">+</span>
       `;
   goalsContainer.appendChild(newGoal);
