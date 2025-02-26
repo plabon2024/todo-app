@@ -35,12 +35,12 @@ document.addEventListener("click", function (event) {
 
 
     if (inputField.value.trim() !== "") {
-      Btn.classList.add("bg-green-500");
+      Btn.classList.add("bg-green-700");
       Btn.innerHTML = `<img src="./assets/Vector 1.png" alt="">`;
       card.classList.add('completed')
       console.log(card)
 
-      inputField.classList.add("text-green-500", "line-through", "decoration-3");
+      inputField.classList.add("text-green-700", "line-through", "decoration-3");
       inputField.disabled=true
 
 

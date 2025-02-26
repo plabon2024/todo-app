@@ -31,15 +31,42 @@
         transform: rotate(360deg);
       }
     }
+
+    body {
+      background: #000;
+
+    }
+
+    .main-card {
+      background: rgba(255, 255, 255, 0.7);
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+    }
+
+
+    .top {
+      position: absolute;
+      color: white;
+      font-weight: bold;
+      font-size: 100px;
+      left: 0;
+      top: 50%;
+      z-index: -1;
+      transform: rotate(90deg) translate(-50%, -100%);
+      transform-origin: top left;
+    }
+
+
   </style>
 </head>
 
 <body>
+  <h1 class="top">The Time Is NOW</h1>
   <main class="poppins-regular">
-    <h1 class="font-bold text-6xl text-center mx-auto my-10">
-      <span class="text-green-600">Focus on</span> Today
+    <h1 class="font-bold text-6xl text-center mx-auto my-10 text-white">
+      <span class="text-green-600">Focus on</span>Today
     </h1>
-
     <div class="main-card container md:w-5/12 rounded-xl p-8 border border-slate-500 mx-auto">
       <div class="flex mx-auto items-center justify-center">
         <h2 class="font-bold text-3xl px-2">Today</h2>
@@ -50,22 +77,21 @@
             src="./assets/Group 5.svg" alt="sun=-Face" />
         </div>
       </div>
-        <div id="progress" class="px-2 h-6  my-5 bg-green-700 invisible rounded-full  text-white"></div>
+      <div id="progress" class="px-2 h-6  my-5 bg-green-700 invisible rounded-full  text-white"></div>
 
       <h2 id="error" class="text-red-500 text-lg py-3 hidden">Write goal first !</h2>
 
       <div id="goals" class="goals">
 
         <div id="card" class="card flex items-center rounded-2xl border border-slate-500 mb-10">
-          <div class="circle w-6 h-6 ml-5 rounded-full border border-slate-500 flex-shrink-0 cursor-pointer flex justify-center items-center">
+          <div
+            class="circle w-6 h-6 ml-5 rounded-full border border-slate-500 flex-shrink-0 cursor-pointer flex justify-center items-center">
           </div>
 
-          <input class=" input p-7 outline-none w-full font-bold" type="text" placeholder="Add new goal... " />
+          <input class="input p-7 outline-none w-full font-bold text-lg" type="text" placeholder="Add new goal... " />
           <span class="addbtn cursor-pointer text-xl p-7 text-center">+</span>
         </div>
-
       </div>
-
 
       <h4 class="text-sm text-center text-slate-600">
         Made with ❤️ by Plabon
