@@ -148,8 +148,14 @@ function getData() {
           Btn.classList.add("bg-green-700");
           Btn.innerHTML = `<img src="./assets/Vector 1.png" alt="">`;
         }
-       
+        const isLastCard = index === goals.length - 1
+        if (!isLastCard) {
+          Btn2.innerText = '-';
+        } else {
+          Btn2.innerText = '+';
+        }
       }
+
     });
   }
 
