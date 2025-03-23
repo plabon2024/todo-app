@@ -40,31 +40,33 @@ function addNewCard() {
 
 
 }
-
 document.addEventListener("click", function (event) {
   if (event.target.classList.contains("circle")) {
     let card = event.target.parentNode;
     let inputField = card.querySelector("input");
-    let Btn = card.querySelector(".circle");
-
-
-    if (inputField.value.trim() !== "") {
-      Btn.classList.add("bg-green-700");
-      Btn.innerHTML = `<img src="./assets/Vector 1.png" alt="">`;
-      card.classList.add('completed')
-      console.log(card)
-
-      inputField.classList.add("text-green-700", "line-through", "decoration-3");
-      inputField.disabled = true
-
-
-      updateGoalCounts()
-      setData()
-
+    const isCompleted = card.classList.contains("completed");
+    let Btn = event.target;
+    if (isCompleted) {
+      Btn.classList.remove("bg-green-700");
+      Btn.innerHTML = "";
+      card.classList.remove("completed");
+      inputField.classList.remove("text-green-700", "line-through", "decoration-3");
+      inputField.disabled = false;
+      updateGoalCounts();
+      setData();
     }
-    else {
-      document.getElementById('error').classList.remove('hidden')
-      setData()
+    else if (inputField.value.trim() !== "") {
+      Btn.classList.add("bg-green-700");
+      // Btn.innerHTML = `<img src="./assets/Vector 1.png" alt="">`;
+      
+      card.classList.add("completed");
+      inputField.classList.add("text-green-700", "line-through", "decoration-3");
+      inputField.disabled = true;
+      updateGoalCounts();
+      setData();
+    } else {
+      document.getElementById("error").classList.remove("hidden");
+
     }
   }
 });
